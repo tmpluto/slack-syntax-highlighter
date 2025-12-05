@@ -1,0 +1,17 @@
+{
+  "name": "slack-syntax-highlighter",
+  "version": "1.0.0",
+  "description": "Add syntax highlighting to code blocks in Slack",
+  "scripts": {
+    "build": "npm run build:highlight && npm run build:copy",
+    "build:highlight": "mkdir -p dist && browserify -r highlight.js -s hljs -o dist/highlight.bundle.js",
+    "build:copy": "cp -r manifest.json content.js highlight.css icons dist/"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
+
